@@ -1,0 +1,36 @@
+install the LXD Package
+
+Verify which Linux distribution your server is running.
+
+ cat /etc/issue
+ 
+Install lxd and lxd-client.
+
+ sudo apt-get install lxd lxd-client 
+
+Initialize LXD
+
+
+ sudo lxd init
+
+Create Your First Container
+
+Create a container using Alpine 3.7 named my-alpine.
+
+ sudo lxc launch images:alpine/3.7 my-alpine
+
+List the Containers
+
+List your containers.
+
+ sudo lxc list
+
+Connect to a Container
+
+Execute an ash shell in your my-alpine container.
+
+ sudo lxc exec my-alpine -- /bin/ash
+ 
+Create a file named hello.txt.
+
+ echo hello world > hello.txt
