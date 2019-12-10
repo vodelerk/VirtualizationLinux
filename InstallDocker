@@ -1,0 +1,32 @@
+
+Verify the Package Installation
+
+Verify that the packages yum-utils, device-mapper-persistent-data, and lvm2 are installed.
+ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+Add the Repository
+
+Add the Docker repository to your server.
+ sudo yum-config-manager --add-repo  https://download.docker.com/linux/centos/docker-ce.repo
+
+Install Docker
+
+Install Docker CE on your server.
+ sudo yum install docker-ce
+
+Enable and Start Docker
+
+Enable and start Docker on the server.
+ sudo systemctl enable docker 
+ sudo systemctl start docker
+
+Add a User to the Docker Group
+
+Add your current user to the Docker group.
+ sudo usermod -a -G docker cloud_user  
+Log out and back in to put the changes into effect.
+
+Create Your First Container
+
+Create your first container using the hello-world image.
+ sudo docker run hello-world
